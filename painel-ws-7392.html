@@ -23,6 +23,21 @@ input, button { padding:10px; margin:10px; }
 <p>Nenhum pedido ainda</p>
 
 <button onclick="alert('Pagamento confirmado!')">Confirmar pagamento</button>
+
+ <div id="painel" style="display:none;">
+<h2>Pedidos</h2>
+<p>Nenhum pedido ainda</p>
+
+<button onclick="alert('Pagamento confirmado!')">Confirmar pagamento</button>
+
+<h2>Alterar Preços</h2>
+
+<input type="number" id="netflix" placeholder="Netflix">
+<input type="number" id="spotify" placeholder="Spotify">
+<input type="number" id="canva" placeholder="Canva">
+
+<button onclick="salvar()">Salvar preços</button>
+ 
 </div>
 
 <script>
