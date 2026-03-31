@@ -31,32 +31,50 @@ button {
 
 <div class="card">
   <h2>Netflix</h2>
-  <p>R$ 15,00</p>
-  <button onclick="comprar('Netflix', 15)">Comprar</button>
+  <p id="preco-netflix"></p>
+  <button onclick="comprar('Netflix', 'netflix')">Comprar</button>
 </div>
 
-    <div class="card">
+<div class="card">
   <h2>Spotify</h2>
-  <p>R$ 10,00</p>
-  <button onclick="comprar('Spotify', 10)">Comprar</button>
+  <p id="preco-spotify"></p>
+  <button onclick="comprar('Spotify', 'spotify')">Comprar</button>
 </div>
 
-    <div class="card">
+<div class="card">
   <h2>Canva Pro</h2>
-  <p>R$ 12,00</p>
-  <button onclick="comprar('Canva Pro', 12)">Comprar</button>
+  <p id="preco-canva"></p>
+  <button onclick="comprar('Canva Pro', 'canva')">Comprar</button>
 </div>
 
    <div id="pagamento"></div>
 
     <script>
-function comprar(produto, valor) {
+
+let precos = {
+  netflix: localStorage.getItem("netflix") || 15,
+  spotify: localStorage.getItem("spotify") || 10,
+  canva: localStorage.getItem("canva") || 12
+};
+
+document.getElementById("preco-netflix").innerText = "R$ " + precos.netflix;
+document.getElementById("preco-spotify").innerText = "R$ " + precos.spotify;
+document.getElementById("preco-canva").innerText = "R$ " + precos.canva;
+
+function comprar(produto, tipo) {
+  let valor = precos[tipo];
+
   document.getElementById("pagamento").innerHTML = `
     <h2>Pagamento</h2>
     <p>Produto: ${produto}</p>
     <p>Valor: R$ ${valor}</p>
     <p>Chave Pix: SUA_CHAVE_AQUI</p>
     <button onclick="alert('Aguarde confirmação!')">Já paguei</button>
+  `;
+}
+
+</script>
+
   `;
 }
 </script>
