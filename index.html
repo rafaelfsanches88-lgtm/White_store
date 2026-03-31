@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>White Store</title>
+<style>
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+button {
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+  <body>
+
+    <h1>White Store</h1>
+
+<div class="card">
+  <h2>Netflix</h2>
+  <p>R$ 15,00</p>
+  <button onclick="comprar('Netflix', 15)">Comprar</button>
+</div>
+
+    <div class="card">
+  <h2>Spotify</h2>
+  <p>R$ 10,00</p>
+  <button onclick="comprar('Spotify', 10)">Comprar</button>
+</div>
+
+    <div class="card">
+  <h2>Canva Pro</h2>
+  <p>R$ 12,00</p>
+  <button onclick="comprar('Canva Pro', 12)">Comprar</button>
+</div>
+
+   <div id="pagamento"></div>
+
+    <script>
+function comprar(produto, valor) {
+  document.getElementById("pagamento").innerHTML = `
+    <h2>Pagamento</h2>
+    <p>Produto: ${produto}</p>
+    <p>Valor: R$ ${valor}</p>
+    <p>Chave Pix: SUA_CHAVE_AQUI</p>
+    <button onclick="alert('Aguarde confirmação!')">Já paguei</button>
+  `;
+}
+</script>
+
+    </body>
+</html>
+:::
