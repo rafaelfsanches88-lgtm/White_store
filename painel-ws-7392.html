@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin - White Store</title>
+<style>
+body { background:#0d0d0d; color:white; font-family:Arial; text-align:center; }
+input, button { padding:10px; margin:10px; }
+</style>
+</head>
+
+<body>
+
+<h1>Painel Admin</h1>
+
+<div id="login">
+<input type="text" id="user" placeholder="Usuário"><br>
+<input type="password" id="pass" placeholder="Senha"><br>
+<button onclick="entrar()">Entrar</button>
+</div>
+
+<div id="painel" style="display:none;">
+<h2>Pedidos</h2>
+<p>Nenhum pedido ainda</p>
+
+<button onclick="alert('Pagamento confirmado!')">Confirmar pagamento</button>
+</div>
+
+<script>
+function entrar(){
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+
+  if(u === "Admin" && p === "02070313@"){
+    document.getElementById("login").style.display="none";
+    document.getElementById("painel").style.display="block";
+  } else {
+    alert("Senha incorreta");
+  }
+}
+</script>
+
+</body>
+</html>
